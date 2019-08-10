@@ -11,7 +11,7 @@ server.get('/', (req, res) => {
         message += 'World';
     }
     message += '!';
-    return res.send(message);
+    return res.json({message: message});
 });
 
 server.listen(8080);
