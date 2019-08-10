@@ -1,5 +1,24 @@
+const axios = require('axios');
+const Dev = require('../models/Devs');
 module.exports = {
-    store(req, res) {
-        return res.json({ message: 'ok' });
+    async store(req, res) {
+        const { username } = req.body;
+
+        const userExists = await Dev.findOne({ user: username});
+
+        if(userExists) {
+            return res.json(userExists);
+        }
+
+        const response = await axios.get(`https://api.github.com/users/${username}`);
+
+        const { name, bio, avatar_url } = response.data;
+        const dev = await Dev.create({
+            name,
+            user: username,
+            bio,
+            avatar: avatar_url
+        });
+        return res.json(dev);
     }
 };
