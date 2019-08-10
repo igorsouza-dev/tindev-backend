@@ -1,0 +1,26 @@
+{
+  "name": "tindev-backend",
+  "version": "1.0.0",
+  "description": "A node backend for the tindev app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/igorsouza/tindev-backend.git"
+  },
+  "keywords": [
+    "backend",
+    "node"
+  ],
+  "author": "Igor Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/igorsouza/tindev-backend/issues"
+  },
+  "homepage": "https://gitlab.com/igorsouza/tindev-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
